@@ -58,7 +58,12 @@ class Form extends Component {
                     addDisabled={!this.state.text.trim()}
                 />
                 <Tags tags={this.state.tags} deleteTodo={this.handleDelete}/>
-                <input type="submit" value="Continue"/>
+                <input 
+                    type="submit"
+                    value="Continue"
+                    className="button primary"
+                    style={{ width: '30.5rem' }}
+                />
             </form>
         )
     }

@@ -12,7 +12,9 @@ const Input = ({text, handleChange, handleAdd, inputDisabled, addDisabled}) => (
         <button 
             type="button"
             onClick={handleAdd}
-            disabled={addDisabled} 
+            disabled={addDisabled}
+            className="button"
+            style={{ margin: '0 1rem' }}
         >
             Add
         </button>
