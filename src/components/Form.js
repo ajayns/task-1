@@ -14,6 +14,7 @@ class Form extends Component {
         this.handleSubmit = this.handleSubmit.bind(this)
         this.handleChange = this.handleChange.bind(this)
         this.handleAdd = this.handleAdd.bind(this)
+        this.handleDelete = this.handleDelete.bind(this)
     }
 
     handleSubmit(e) {
@@ -38,6 +39,14 @@ class Form extends Component {
         }
     }
 
+    handleDelete(text) {
+        this.setState((prevState) => {
+            return {
+                tags: prevState.tags.filter(tag => tag !== text)
+            }
+        })        
+    }
+
     render() {
         return (
             <form onSubmit={this.handleSubmit}>
@@ -45,8 +54,10 @@ class Form extends Component {
                     text={this.state.text} 
                     handleChange={this.handleChange} 
                     handleAdd={this.handleAdd}
+                    inputDisabled={this.state.tags.length >= 10}
+                    addDisabled={!this.state.text.trim()}
                 />
-                <Tags tags={this.state.tags}/>
+                <Tags tags={this.state.tags} deleteTodo={this.handleDelete}/>
                 <input type="submit" value="Continue"/>
             </form>
         )
