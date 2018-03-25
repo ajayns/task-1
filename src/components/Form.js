@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { arrayMove } from 'react-sortable-hoc'
 
 import Input from './Input'
 import Tags from './Tags'
@@ -15,6 +16,7 @@ class Form extends Component {
         this.handleChange = this.handleChange.bind(this)
         this.handleAdd = this.handleAdd.bind(this)
         this.handleDelete = this.handleDelete.bind(this)
+        this.onSortEnd = this.onSortEnd.bind(this)
     }
 
     handleSubmit(e) {
@@ -47,6 +49,14 @@ class Form extends Component {
         })        
     }
 
+    onSortEnd({oldIndex, newIndex}) {
+        this.setState((prevState) => {
+            return {
+                tags: arrayMove(this.state.tags, oldIndex, newIndex)
+            }
+        })
+    }
+
     render() {
         return (
             <form onSubmit={this.handleSubmit}>
@@ -57,7 +67,12 @@ class Form extends Component {
                     inputDisabled={this.state.tags.length >= 10}
                     addDisabled={!this.state.text.trim()}
                 />
-                <Tags tags={this.state.tags} deleteTodo={this.handleDelete}/>
+                <Tags 
+                    tags={this.state.tags} 
+                    deleteTodo={this.handleDelete}
+                    axis="xy"
+                    onSortEnd={this.onSortEnd}
+                />
                 <input 
                     type="submit"
                     value="Continue"

@@ -63,17 +63,17 @@ input[type=text]:disabled {
   padding: 0.5rem;
   border-radius: 2px;
   border: 1px solid #0becc1;
+  cursor: grab;
 }
 
 .tag > .close {
   background: #246e61;
   border: none;
-  margin: 0 0.2rem 0 1.5rem;
+  margin: 0 2px 0 24px;
   height: 24px;
   width: 24px;
   color: #fff;
   border-radius: 12px;
   display: inline-block;
-  position: relative;
   font-size: 12px;
 }

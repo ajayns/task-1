@@ -1,6 +1,7 @@
 import React from 'react'
+import { SortableElement } from 'react-sortable-hoc'
 
-const Tag = ({text, deleteTodo}) => (
+const Tag = SortableElement(({text, deleteTodo}) => (
     <div className="tag">
         {text}
         <button 
@@ -11,6 +12,6 @@ const Tag = ({text, deleteTodo}) => (
             x
         </button>
     </div>
-)
+))
 
 export default Tag
