@@ -37,6 +37,10 @@ input[type=text]:disabled {
   background: #00f5c7;
 }
 
+.tags-form {
+  font-size: 0.9rem;
+}
+
 .button {
   height: 2.2rem;
   padding: 0 1.2rem;
@@ -64,12 +68,13 @@ input[type=text]:disabled {
   border-radius: 2px;
   border: 1px solid #0becc1;
   cursor: grab;
+  white-space: nowrap;
 }
 
 .tag > .close {
   background: #246e61;
   border: none;
-  margin: 0 2px 0 24px;
+  margin: 0 0.3rem 0 1.5rem;
   height: 24px;
   width: 24px;
   color: #fff;

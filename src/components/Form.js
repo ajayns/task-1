@@ -59,7 +59,7 @@ class Form extends Component {
 
     render() {
         return (
-            <form onSubmit={this.handleSubmit}>
+            <form onSubmit={this.handleSubmit} className="tags-form">
                 <Input 
                     text={this.state.text} 
                     handleChange={this.handleChange} 
