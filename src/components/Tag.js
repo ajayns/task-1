@@ -1,12 +1,12 @@
 import React from 'react'
 import { SortableElement } from 'react-sortable-hoc'
 
-const Tag = SortableElement(({text, deleteTodo}) => (
+const Tag = SortableElement(({text, deleteTag}) => (
     <div className="tag">
         {text}
         <button 
             type="button" 
-            onClick={e => deleteTodo(text)}
+            onClick={e => deleteTag(text)}
             className="close"
         >
             x
