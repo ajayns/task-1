@@ -69,7 +69,7 @@ class Form extends Component {
                 />
                 <Tags 
                     tags={this.state.tags} 
-                    deleteTodo={this.handleDelete}
+                    deleteTag={this.handleDelete}
                     axis="xy"
                     onSortEnd={this.onSortEnd}
                 />
