@@ -1,7 +1,7 @@
 import React from 'react'
 
 const Input = ({text, handleChange, handleAdd, inputDisabled, addDisabled}) => (
-    <div>
+    <form>
         <div>Your skills (Upto 10)</div>
         <input
             type="text"
@@ -10,7 +10,6 @@ const Input = ({text, handleChange, handleAdd, inputDisabled, addDisabled}) => (
             disabled={inputDisabled}
         />
         <button 
-            type="button"
             onClick={handleAdd}
             disabled={addDisabled}
             className="button"
@@ -18,7 +17,7 @@ const Input = ({text, handleChange, handleAdd, inputDisabled, addDisabled}) => (
         >
             Add
         </button>
-    </div>
+    </form>
 )
 
 export default Input

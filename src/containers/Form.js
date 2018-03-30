@@ -12,15 +12,14 @@ class Form extends Component {
             text: ""
         }
 
-        this.handleSubmit = this.handleSubmit.bind(this)
+        this.handleClickContinue = this.handleClickContinue.bind(this)
         this.handleChange = this.handleChange.bind(this)
         this.handleAdd = this.handleAdd.bind(this)
         this.handleDelete = this.handleDelete.bind(this)
         this.onSortEnd = this.onSortEnd.bind(this)
     }
 
-    handleSubmit(e) {
-        e.preventDefault()
+    handleClickContinue(e) {
         console.log(this.state.tags)
     }
 
@@ -31,6 +30,7 @@ class Form extends Component {
     }
 
     handleAdd(e) {
+        e.preventDefault()
         if(this.state.text.trim()) {
             this.setState((prevState) => {
                 return {
@@ -59,7 +59,7 @@ class Form extends Component {
 
     render() {
         return (
-            <form onSubmit={this.handleSubmit} className="tags-form">
+            <div className="tags-form">
                 <Input 
                     text={this.state.text} 
                     handleChange={this.handleChange} 
@@ -73,16 +73,17 @@ class Form extends Component {
                     axis="xy"
                     onSortEnd={this.onSortEnd}
                 />
-                <input 
+                <button 
                     type="submit"
-                    value="Continue"
+                    onClick={this.handleClickContinue}
                     className="button primary"
                     style={{ width: '30.5rem' }}
-                />
-            </form>
+                >
+                    Continue
+                </button>
+            </div>
         )
     }
 }
-
 
 export default Form
