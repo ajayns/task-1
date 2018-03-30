@@ -8,8 +8,8 @@ class Form extends Component {
     constructor() {
         super()
         this.state = {
-            tags: ["Javascript", "UI"],
-            text: ""
+            tags: ['Javascript', 'UI'],
+            text: ''
         }
 
         this.handleClickContinue = this.handleClickContinue.bind(this)
