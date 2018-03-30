@@ -19,16 +19,20 @@ class Form extends Component {
         this.onSortEnd = this.onSortEnd.bind(this)
     }
 
+    // Log array when continue button clicked
     handleClickContinue(e) {
         console.log(this.state.tags)
     }
 
+    // Handles changes to tag input
     handleChange(e) {
         this.setState({
             text: e.target.value
         })
     }
 
+    // Add new tag
+    // prevent page reload on return key
     handleAdd(e) {
         e.preventDefault()
         if(this.state.text.trim()) {
@@ -41,6 +45,7 @@ class Form extends Component {
         }
     }
 
+    // Deletes particular tag
     handleDelete(text) {
         this.setState((prevState) => {
             return {
@@ -49,6 +54,7 @@ class Form extends Component {
         })        
     }
 
+    // Change order of array in state when tags reordered
     onSortEnd({oldIndex, newIndex}) {
         this.setState((prevState) => {
             return {
