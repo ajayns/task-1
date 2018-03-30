@@ -1,7 +1,7 @@
 import React from 'react'
 import { SortableContainer } from 'react-sortable-hoc'
 
-import Tag from './Tag'
+import Tag from '../components/Tag'
 
 const Tags = SortableContainer(({tags, deleteTag}) => (
     <div style={{ margin: '1rem 0 1rem 0' }}>

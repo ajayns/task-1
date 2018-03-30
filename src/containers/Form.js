@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { arrayMove } from 'react-sortable-hoc'
 
-import Input from './Input'
+import Input from '../components/Input'
 import Tags from './Tags'
 
 class Form extends Component {
